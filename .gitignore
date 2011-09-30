@@ -5,3 +5,6 @@
 
 # Ignore emacs backup files
 *.*~
+
+# Ignore Maven build artifacts
+target
