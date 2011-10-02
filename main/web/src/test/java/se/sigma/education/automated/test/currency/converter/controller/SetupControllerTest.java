@@ -18,7 +18,7 @@ public class SetupControllerTest {
         String expectedLandingPageName = "conversionRates";
 
         String expectedCurrency = "EURO";
-        Double expectedConversionFactor = 9.24;
+        Integer expectedConversionFactor = 11;
         String actualLandingPageName = setup.setConversionRate(expectedCurrency, expectedConversionFactor, model);
 
         assertThat(actualLandingPageName, is(expectedLandingPageName));
@@ -26,7 +26,7 @@ public class SetupControllerTest {
         assertTrue("Should contain the expected currency " + expectedCurrency, model.containsAttribute(expectedCurrency));
         Map<String, Object> objectMap = model.asMap();
         Object actualFactor = objectMap.get(expectedCurrency);
-        Double actualConversionFactor = (Double) actualFactor;
+        Integer actualConversionFactor = (Integer) actualFactor;
         assertThat(actualConversionFactor, is(expectedConversionFactor));
     }
 }

@@ -2,15 +2,15 @@ package se.sigma.education.automated.test;
 
 public class Money {
     private String currency;
-    private Long amount;
+    private Integer amount;
 
-    public Money(Long amount, String currency) {
+    public Money(Integer amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
     public Money add(Money money) {
-        long conversionFactor = Converter.getConversionFactor(money.currency);
+        Integer conversionFactor = Converter.getConversionFactor(money.currency);
         amount = amount + (money.amount * conversionFactor);
 
         return this;

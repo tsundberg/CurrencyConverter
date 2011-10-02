@@ -9,15 +9,14 @@ public class ConverterTest {
 
     @Test
     public void addSekToEuro() {
-        Converter converter = new Converter();
-        Long euroToSek = 9l;
-        converter.setConversionFactor("EURO", euroToSek);
+        Integer euroToSek = 9;
+        Converter.setConversionFactor("EURO", euroToSek);
 
-        long hundredSek = 100l;
+        Integer hundredSek = 100;
         Money sek = new Money(hundredSek, "SEK");
-        long tenEuro = 10l;
+        Integer tenEuro = 10;
         Money euro = new Money(tenEuro, "EURO");
-        long hundredNinetySeka = 190l;
+        Integer hundredNinetySeka = 190;
         Money expected = new Money(hundredNinetySeka, "SEK");
 
         Money actual = sek.add(euro);

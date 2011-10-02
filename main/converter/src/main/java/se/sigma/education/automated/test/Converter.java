@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Converter {
-    private static Map<String, Long> conversionTable = new HashMap<String, Long>();
+    private static Map<String, Integer> conversionTable = new HashMap<String, Integer>();
 
-    public void setConversionFactor(String currency, Long lmu) {
-        conversionTable.put(currency, lmu);
+    public static Integer getConversionFactor(String currencySymbol) {
+        return conversionTable.get(currencySymbol);
     }
 
-    public static long getConversionFactor(String currency) {
-        return conversionTable.get(currency);
+    public static void setConversionFactor(String currencySymbol, Integer conversionFactor) {
+        conversionTable.put(currencySymbol, conversionFactor);
     }
 }
