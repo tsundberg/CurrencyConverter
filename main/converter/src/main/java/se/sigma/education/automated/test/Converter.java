@@ -13,4 +13,9 @@ public class Converter {
     public static void setConversionFactor(String currencySymbol, Integer conversionFactor) {
         conversionTable.put(currencySymbol, conversionFactor);
     }
+
+    public static Integer convert(String from, Integer amount) {
+        Integer conversionFactor = getConversionFactor(from);
+        return amount * conversionFactor;
+    }
 }
