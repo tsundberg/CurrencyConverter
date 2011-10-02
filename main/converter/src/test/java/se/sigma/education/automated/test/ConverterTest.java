@@ -9,17 +9,11 @@ public class ConverterTest {
 
     @Test
     public void addSekToEuro() {
-        Integer euroToSek = 9;
-        Converter.setConversionFactor("EURO", euroToSek);
+        Integer expected = 9;
+        String currencySymbol = "EURO";
+        Converter.setConversionFactor(currencySymbol, expected);
 
-        Integer hundredSek = 100;
-        Money sek = new Money(hundredSek, "SEK");
-        Integer tenEuro = 10;
-        Money euro = new Money(tenEuro, "EURO");
-        Integer hundredNinetySeka = 190;
-        Money expected = new Money(hundredNinetySeka, "SEK");
-
-        Money actual = sek.add(euro);
+        Integer actual = Converter.getConversionFactor(currencySymbol);
 
         assertThat(actual, is(expected));
     }
